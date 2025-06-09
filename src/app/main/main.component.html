@@ -1,0 +1,49 @@
+<div class="d-flex justify-content-center">
+  <h1>List of Iphone products</h1></div>
+
+<nav class="navbar">
+  <div class="container-fluid d-flex justify-content-center">
+    
+      <input class="form-control me-2 w-25" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchProduct" (input)="updateSuggestions()">
+      <button class="btn btn-outline-success" (click)="onSearch()">Search</button>
+    
+  </div>
+</nav>
+<div class="container-fluid  suggestion">
+ <ul class="list-group position-absolute w-25" *ngIf="autocompleteSuggestions.length > 0">
+  <li
+    class="list-group-item list-group-item-action"
+    *ngFor="let suggestion of autocompleteSuggestions"
+    (click)="selectSuggestion(suggestion)"
+    style="cursor: pointer;"
+  >
+    {{ suggestion }}
+  </li>
+</ul>
+</div>
+
+<section class="listing results">
+<div class="container text-center" *ngFor="let product of products">
+  <div class="row align-items-start">
+    <div class="col">
+      
+     
+      <div class="card-body">
+         <img src="{{product.imageUrl}}" class="card-img-top" alt="...">
+        <h5 class="card-title">{{product.name}}</h5>
+        <p class="card-text">Color: {{product.color}}</p>
+         <p class="card-text">Capacity: {{product.capacity}}</p>
+          <p class="card-text">Price: {{ product.price + "R"}}</p>
+          <p class="card-text">Quantity: {{product.Quantity}}</p>
+          <p>{{product.Quantity > 0? "In stock" : "Out of stock"}}</p>
+          <p [ngStyle]="setCurrentStyles()"> {{product.onSale? "Sale 30% Off "  : ""}}</p>
+          <button (click)="onClick()" *ngIf="product.Quantity > 0" class="btn btn-primary" [disabled]="product.Quantity < 1" >{{product.onSale? "Buy now at " + (saleDiscount * product.price).toFixed(1) + "R" : "Buy now"}} </button>
+         
+      </div>
+       
+    </div> 
+  
+</div>
+</div>
+</section>
+

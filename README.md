@@ -1,3 +1,5 @@
+Angular Ecommerce Website with some angular services and routing.
+
 # EcommerceWebsite
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.9.

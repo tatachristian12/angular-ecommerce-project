@@ -1,0 +1,18 @@
+<div class="tab-pane fade show active container bg-body-tertiary mt-5 pt-3 pb-3 w-25 rounded-2" id="login" role="tabpanel">
+
+    <h1 class="text-center mb-3">LOGIN</h1>
+        <form class="">
+          <div class="mb-3">
+            <label for="loginEmail" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="loginEmail" >
+          </div>
+          <div class="mb-3">
+            <label for="loginPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" id="loginPassword">
+          </div>
+          <button type="submit" class="btn btn-primary w-100" (click)="onClick()">Login</button>
+          <p class="text-success">{{displayMessage}}</p>
+          <p class="text-center mt-2">OR</p>
+          <button type="submit" class="btn btn-success w-100" routerLink="/register" (click)="onClick()">Register</button>
+        </form>
+      </div>
