@@ -23,7 +23,7 @@
 </div>
 
 <section class="listing results">
-<div class="container text-center" *ngFor="let product of products">
+<div class="container text-center" *ngFor="let product of allProducts" >
   <div class="row align-items-start">
     <div class="col">
       
@@ -37,7 +37,7 @@
           <p class="card-text">Quantity: {{product.Quantity}}</p>
           <p>{{product.Quantity > 0? "In stock" : "Out of stock"}}</p>
           <p [ngStyle]="setCurrentStyles()"> {{product.onSale? "Sale 30% Off "  : ""}}</p>
-          <button (click)="onClick()" *ngIf="product.Quantity > 0" class="btn btn-primary" [disabled]="product.Quantity < 1" >{{product.onSale? "Buy now at " + (saleDiscount * product.price).toFixed(1) + "R" : "Buy now"}} </button>
+          <button (click)="goToDetails(product.id)" *ngIf="product.Quantity > 0" class="btn btn-primary" [disabled]="product.Quantity < 1" >{{product.onSale? "Shop now at " + (saleDiscount * product.price).toFixed(1) + "R" : "shop now"}} </button>
          
       </div>
        
