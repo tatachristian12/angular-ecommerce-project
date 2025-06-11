@@ -1,4 +1,4 @@
-Angular Ecommerce Website with some angular services and routing.
+Angular Ecommerce Website project with some angular services and routing.
 
 # EcommerceWebsite
 
